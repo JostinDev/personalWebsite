@@ -23,6 +23,7 @@ function Navbar () {
       tempNav[key].current = false
     }
     tempNav[item.id].current = true
+
     setNavigation(tempNav)
   }
 
