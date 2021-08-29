@@ -1,24 +1,30 @@
 import React from 'react'
 import Navbar from './component/navbar'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Home from './view/home'
 import Projects from './view/projects'
 import Blog from './view/blog'
+import NotFound from './view/404'
 
 function App () {
   return (
     <div>
       <Router>
         <Navbar />
-        <Route exact path='/'>
-          <Home />
-        </Route>
-        <Route exact path='/projects'>
-          <Projects />
-        </Route>
-        <Route exact path='/blog'>
-          <Blog />
-        </Route>
+        <Switch>
+          <Route exact path='/'>
+            <Home />
+          </Route>
+          <Route exact path='/projects'>
+            <Projects />
+          </Route>
+          <Route exact path='/blog'>
+            <Blog />
+          </Route>
+          <Route path=''>
+            <NotFound />
+          </Route>
+        </Switch>
       </Router>
     </div>
   )
